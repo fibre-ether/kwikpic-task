@@ -28,13 +28,11 @@ function About() {
           end: "bottom top",
         },
       })
-      .to(target1,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-30)
-      .to(target2,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-27)
-      .to(target3,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-25)
-      .to(target4,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-23)
-      .to(target5,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-21)
-      ;
-    console.log("animating");
+      .to(target1,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-27)
+      .to(target2,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-24.5)
+      .to(target3,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-22.75)
+      .to(target4,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-21)
+      .to(target5,{motionPath: { path: path, align: path, alignOrigin: [0.5, 0.5],},},-20);
   });
 
   return (
@@ -101,7 +99,7 @@ function About() {
           </svg>
           <img className="absolute scale-[0.2]" ref={(el) => (target1 = el)} src={img1} alt="1" />
           <img className="absolute scale-[0.2]" ref={(el) => (target2 = el)} src={img2} alt="2" />
-          <img className="absolute scale-[0.75]" ref={(el) => (target3 = el)} src={img3} alt="3" />
+          <img className="absolute scale-[0.7]" ref={(el) => (target3 = el)} src={img3} alt="3" />
           <img className="absolute scale-[0.2]" ref={(el) => (target4 = el)} src={img4} alt="4" />
           <img className="absolute scale-[0.2]" ref={(el) => (target5 = el)} src={img5} alt="5" />
         </div>
