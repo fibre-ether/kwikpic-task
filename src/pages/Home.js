@@ -12,7 +12,6 @@ function Home() {
   let ele2 = useRef(null)
   let ele3 = useRef(null)
   let ele4 = useRef(null)
-  let ar = [ele1, ele2]
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
@@ -33,22 +32,22 @@ function Home() {
     tl4.to(ele4, {y: 0, duration: 1});
 
     gsap.to('.left', {
-      xPercent: -150,
+      x: -100,
       ease: "none",
       scrollTrigger: {
         trigger: ".left",
-        start: "top center",
+        start: "top top",
         end: "bottom top",
         scrub: true
       }
     })
 
     gsap.to('.right', {
-      xPercent: 150,
+      x: 100,
       ease: "none",
       scrollTrigger: {
         trigger: ".right",
-        start: "top center",
+        start: "top top",
         end: "bottom top",
         scrub: true
       }
@@ -59,7 +58,7 @@ function Home() {
       const anim = gsap.fromTo(box, {opacity: 0}, {duration: 1, opacity: 1});
       ScrollTrigger.create({
         trigger: box,
-        start: "top center",
+        start: "top 70%",
         animation: anim,
         toggleActions: 'play pause resume reset',
       });
@@ -69,21 +68,21 @@ function Home() {
 
 
   return (
-    <div className="bg-black tracking-wider">
+    <div className="bg-black tracking-wider overflow-x-clip">
       {/* Section 1 */}
       <div className="h-screen relative">
-              <img ref={el => ele1=el} src={img1} alt="1" className="left absolute h-40 w-40 top-[20%] left-[10%]"/>
-              <img ref={el => ele2=el} src={img2} alt="2" className="left absolute h-56 w-56 bottom-[10%] left-[5%]"/>
-              <img ref={el => ele3=el} src={img3} alt="3" className="right absolute h-40 w-40 top-[20%] right-[10%]"/>
-              <img ref={el => ele4=el} src={img4} alt="4" className="right absolute h-56 w-56 bottom-[10%] right-[5%]"/>
+              <img ref={el => ele1=el} src={img1} alt="1" className="left absolute h-32 md:h-40 aspect-square top-[20%] left-[10%]"/>
+              <img ref={el => ele2=el} src={img2} alt="2" className="left absolute h-40 md:h-56 aspect-square bottom-[10%] left-[5%]"/>
+              <img ref={el => ele3=el} src={img3} alt="3" className="right absolute h-32 md:h-40 aspect-square top-[20%] right-[10%]"/>
+              <img ref={el => ele4=el} src={img4} alt="4" className="right absolute h-40 md:h-56 aspect-square bottom-[10%] right-[5%]"/>
             
         <div className="z-20 relative h-full text-white flex flex-col justify-center items-center">
-          <p className="mt-5 text-7xl font-bold">10% returns.</p>
-          <p className="mt-5 text-7xl font-bold">Now yours.</p>
-          <p className="mt-7 text-3xl font-medium">
+          <p className="mt-5 text-4xl md:text-7xl font-bold">10% returns.</p>
+          <p className="mt-5 text-4xl md:text-7xl font-bold">Now yours.</p>
+          <p className="mt-7 text-base md:text-3xl font-medium">
             Invest and grow your stablecoins.
           </p>
-          <div className="bg-white text-black h-20 w-52 rounded-xl border-[3px] border-gray-400 flex justify-center items-center text-xl font-semibold mt-12 glow transition-shadow">
+          <div className="bg-white text-black h-20 w-52 rounded-xl border-[3px] border-gray-400 flex justify-center items-center text-lg md:text-xl font-semibold mt-12 glow transition-shadow">
             Invest now
           </div>
         </div>
@@ -95,35 +94,35 @@ function Home() {
       </div>
 
       {/* Section 2 */}
-      <div className="h-auto flex">
-        <div className="sticky top-0 h-screen w-[45%] flex justify-center items-center">
+      <div className="h-auto flex text-center lg:text-left">
+        <div className="sticky top-0 h-screen w-[45%] lg:flex sm:hidden justify-center items-center">
           <img src={devices} alt="devices" className="scale-50" />
         </div>
-        <div className="h-[300vh] text-white w-[55%] flex flex-col">
-          <div className="h-screen w-full flex flex-col justify-center items-start pl-10 pr-20 textbox">
-            <p className="leading-[4.25rem] text-7xl font-bold mb-8">
+        <div className="h-auto text-white lg:w-[55%] flex flex-col sm:items-center sm:text-center space-y-10 md:space-y-0">
+          <div className="h-[30vh] lg:h-screen w-full flex flex-col justify-center items-start pl-10 pr-20 textbox">
+            <p className="lg:leading-[4.25rem] text-4xl lg:text-7xl font-bold mb-8">
               They grow so fast
             </p>
-            <p className="leading-normal text-2xl text-gray-400">
+            <p className="lg:leading-normal text-base lg:text-2xl text-gray-400">
               Your USDTs and USDCs feel so at home here, that they will grow by
               10% by the end of the year. Allow your stable coins to generate
               stable returns for you.
             </p>
           </div>
-          <div className="h-screen w-full flex flex-col justify-center items-start pl-10 pr-20 textbox">
-            <p className="leading-[4.25rem] text-7xl font-bold mb-8">
+          <div className="h-[30vh] lg:h-screen w-full flex flex-col justify-center items-start pl-10 pr-20 textbox">
+            <p className="lg:leading-[4.25rem] text-4xl lg:text-7xl font-bold mb-8">
               No secrets, no fine print
             </p>
-            <p className="leading-normal text-2xl text-gray-400">
+            <p className="lg:leading-normal text-base lg:text-2xl text-gray-400">
               There are no hidden fees on Flint. Whatever charges you will incur
               will be shared with you upfront. We take transparency seriously.
             </p>
           </div>
-          <div className="h-screen w-full flex flex-col justify-center items-start pl-10 pr-20 textbox">
-            <p className="leading-[4.25rem] text-7xl font-bold mb-8">
+          <div className="h-[30vh] lg:h-screen w-full flex flex-col justify-center items-start pl-10 pr-20 textbox">
+            <p className="lg:leading-[4.25rem] text-4xl lg:text-7xl font-bold mb-8">
               Unconditionally unclocked
             </p>
-            <p className="leading-normal text-2xl text-gray-400">
+            <p className="lg:leading-normal text-base lg:text-2xl text-gray-400">
               There are no lock-in periods on Flint. You can withdraw anytime
               and have the funds in your wallet instantly. We keep your
               investment liquid, even when its growing.
