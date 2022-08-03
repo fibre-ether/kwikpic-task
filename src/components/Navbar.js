@@ -3,7 +3,7 @@ import { AiOutlineArrowDown } from 'react-icons/ai'
 import { Link } from "react-router-dom";
 function Navbar() {
   return (
-    <div className="fixed z-50 top-0 w-full bg-transparent text-white h-[6.25rem] flex items-center font-semibold text-xl backdrop-blur-sm border-b-[1px] border-white/20">
+    <div className="fixed z-50 top-0 w-full bg-transparent text-white h-[6.25rem] flex items-center font-semibold text-xl backdrop-blur-sm border-b-[1px] border-white/20 tracking-wide">
       <div className="w-[75%] flex justify-center">
         <div className="w-auto flex space-x-10 px-10 text-gray-400">
           <img src={logo} alt="logo" className="h-[2.1rem]" />
