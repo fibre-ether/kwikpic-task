@@ -39,7 +39,7 @@ function Navbar() {
           <p>Blog</p>
         </div>
       </div>
-      <button onClick={()=>(window.open("https://github.com/fibre-ether/kwikpic-task", '_blank', 'noopener,noreferrer'))} className="w-[20%] lg:flex hidden items-center h-[6.25rem]">
+      <button className="w-[20%] lg:flex hidden items-center h-[6.25rem]">
         <div className="bg-[#1a1a1a] h-[60%] rounded-full flex items-center w-auto">
           <p className="mx-6 text-base">Download Now</p>
           <div className="h-[80%] mr-2 bg-white text-black aspect-square rounded-full flex justify-center items-center border-[6px] border-black">
